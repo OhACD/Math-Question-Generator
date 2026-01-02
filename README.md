@@ -24,11 +24,7 @@ cd src
 python question_generator.py
 ```
 
-The tool will randomly generate either an arithmetic question or a word problem with multiple choice answers.
-
-## Project Structure
-
-```
+The tool will randomly generate either an arithmetic question, a word problem or a multiplication problem with multiple choice answers.
 
 ## Future Plans
 
