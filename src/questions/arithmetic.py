@@ -5,17 +5,17 @@ Returns: A prompt and its answer's index.
 import random
 
 class ArithmeticQuestion:
-    @staticmethod
-    def get_arithmetic_question():
-        nums = random.sample(range(2, 39), 3)
-        num1, num2, num3 = nums[0], nums[1], nums[2]
+    def __init__(self, min, max):
+        self.min = min
+        self.max = max
+        self.letters = ["A", "B", "C", "D"]
+        self.signs = ['+', '-']
         
-        letters = ["A", "B", "C", "D"]
-        f_answer = []
-        
-        signs = ['+', '-']
-        sign1 = random.choice(signs)
-        sign2 = random.choice(signs)
+    def get_arithmetic_question(self):
+        nums = random.sample(range(self.min, self.max), 3)
+        num1, num2, num3 = nums[0], nums[1], nums[2]        
+        signs = random.choices(self.signs, k=2)
+        sign1, sign2 = signs[0], signs[1]
         
         prompts = [
             f"What is {num1} {sign1} {num2} {sign2} {num3}?",
@@ -35,8 +35,7 @@ class ArithmeticQuestion:
         random.shuffle(answers)
         answer_index = answers.index(answer)
         
-        for i in range(len(answers)):
-            f_answer.append(f"{letters[i]}) {answers[i]}")
+        f_answer = [f"{self.letters[i]}) {answers[i]}" for i in range(len(answers))]
         
         f_prompt = f"""{prompt}
 Answers:

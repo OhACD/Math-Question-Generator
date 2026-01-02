@@ -5,16 +5,18 @@ Returns: A prompt and its answer's index.
 import random
 
 class WordQuestion:
-    @staticmethod
-    def get_word_question():
-        names = ["Alice", "Bob", "Charlie", "Diana"]
-        letters = ["A", "B", "C", "D"]
+    def __init__(self, names, min, max):
+        self.names = names
+        self.min = min
+        self.max = max
+        self.letters = ["A", "B", "C", "D"]
+    
+    def get_word_question(self):
         f_answers = []
-        name = random.choice(names)
-        num_apples = random.randint(2, 6)
-        price_apples = random.randint(1, 5)
-        num_bananas = random.randint(2, 6)
-        price_bananas = random.randint(1, 5)
+        name = random.choice(self.names)
+        
+        values = random.sample(range(self.min, self.max), 4)
+        num_apples, num_bananas, price_apples, price_bananas = values[0], values[1], values[2], values[3]
         total_cost = (num_apples * price_apples) + (num_bananas * price_bananas)
         
         answers = [
@@ -26,8 +28,7 @@ class WordQuestion:
         random.shuffle(answers)
         
         for i in range(len(answers)):
-            f_answers.append(f"{letters[i]}) ${answers[i]}")
-        
+            f_answers.append(f"{self.letters[i]}) ${answers[i]}")
         
         prompt = f"""{name} want's to by {num_apples} apples for ${price_apples} each and {num_bananas} bananas for ${price_bananas} each. How much will {name} spend in total?
 Answers:
