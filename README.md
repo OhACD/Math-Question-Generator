@@ -29,14 +29,6 @@ The tool will randomly generate either an arithmetic question or a word problem 
 ## Project Structure
 
 ```
-math-question-generator/
-├── src/
-│   ├── question_generator.py    # Main entry point
-│   └── questions/
-│       ├── arithmetic.py         # Arithmetic question generator
-│       └── word.py              # Word problem generator
-└── README.md
-```
 
 ## Future Plans
 
