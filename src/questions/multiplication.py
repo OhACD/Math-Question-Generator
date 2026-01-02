@@ -9,7 +9,7 @@ class MultiplicationQuestion:
         self.min = min
         self.max = max
         self.letters = ["A", "B", "C", "D"]
-        self. operands = ['*', '/']
+        self.operands = ['*', '/']
         
     def get_multiplication_question(self):
         nums = random.sample(range(self.min, self.max), 2)
@@ -23,7 +23,7 @@ class MultiplicationQuestion:
             # No division by zero
             num1 = num1 * num2
             prompt = f"What is {num1} / {num2}?"
-            answer = num1 / num2
+            answer = num1 // num2
         
         answers = [
             answer,

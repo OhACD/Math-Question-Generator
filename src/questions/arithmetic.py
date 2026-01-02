@@ -24,7 +24,15 @@ class ArithmeticQuestion:
         
         index = random.randint(0, len(prompts) - 1)
         prompt = prompts[index]
-        answer = eval(prompt.split("What is ")[1].replace('?', ''))
+        
+        # Calculate answer directly instead of using eval()
+        if index == 0:
+            answer = num1
+            answer = answer + num2 if sign1 == '+' else answer - num2
+            answer = answer + num3 if sign2 == '+' else answer - num3
+        else:
+            answer = num3
+            answer = answer + num2 if sign2 == '+' else answer - num2
         
         answers = [
             answer,

@@ -30,7 +30,7 @@ class WordQuestion:
         for i in range(len(answers)):
             f_answers.append(f"{self.letters[i]}) ${answers[i]}")
         
-        prompt = f"""{name} want's to by {num_apples} apples for ${price_apples} each and {num_bananas} bananas for ${price_bananas} each. How much will {name} spend in total?
+        prompt = f"""{name} wants to buy {num_apples} apples for ${price_apples} each and {num_bananas} bananas for ${price_bananas} each. How much will {name} spend in total?
 Answers:
 {"\n".join(f_answers)}
 """
