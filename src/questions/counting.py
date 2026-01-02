@@ -9,7 +9,7 @@ class CountingQuestion:
         self.letters = ["A", "B", "C", "D"]
         
     def get_counting_question(self):
-        skip_values = [2, 3, 5, 10]
+        skip_values = [2, 3, 4, 5, 10]
         skip_by = random.choice(skip_values)
         
         sequence_length = random.randint(3, 6)
