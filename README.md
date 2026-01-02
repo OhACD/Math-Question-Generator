@@ -6,7 +6,9 @@ A Python CLI tool that generates math questions for elementary students (grades 
 
 - **Arithmetic Questions**: Addition and subtraction problems with multiple choice answers
 - **Word Problems**: Real-world scenarios involving money and simple calculations
+- **Multiplication/Division problems**: Multiplication/Division problems with checks to insure non-zero division 
 - Random question generation for varied practice
+
 
 ## Installation
 
