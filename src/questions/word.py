@@ -14,7 +14,7 @@ class WordQuestion:
     def get_word_question(self):
         name = random.choice(self.names)
         
-        # Lazy generate numbers to allow lower number ranges without bugs
+        # Split number generation to allow lower number ranges without bugs
         values1 = random.sample(range(self.min, self.max), 2)
         values2 = random.sample(range(self.min, self.max), 2)
         num_apples, num_bananas, price_apples, price_bananas = values1[0], values1[1], values2[0], values2[1]
