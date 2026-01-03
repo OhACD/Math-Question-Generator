@@ -9,13 +9,13 @@ class ArithmeticQuestion:
         self.min = min
         self.max = max
         self.letters = ["A", "B", "C", "D"]
-        self.signs = ['+', '-']
+        self.operands = ['+', '-']
         
     def get_arithmetic_question(self):
         nums = random.sample(range(self.min, self.max), 3)
         num1, num2, num3 = nums[0], nums[1], nums[2]        
-        signs = random.choices(self.signs, k=2)
-        sign1, sign2 = signs[0], signs[1]
+        operands = random.choices(self.operands, k=2)
+        sign1, sign2 = operands[0], operands[1]
         
         prompts = [
             f"What is {num1} {sign1} {num2} {sign2} {num3}?",
@@ -45,9 +45,6 @@ class ArithmeticQuestion:
         
         f_answer = [f"{self.letters[i]}) {answers[i]}" for i in range(len(answers))]
         
-        f_prompt = f"""{prompt}
-Answers:
-{"\n".join(f_answer)}
-"""
+        f_prompt = f"""{prompt}\nAnswers:\n{"\n".join(f_answer)}"""
         
         return f_prompt, answer_index

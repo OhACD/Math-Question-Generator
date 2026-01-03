@@ -7,10 +7,10 @@ from questions.multiplication import MultiplicationQuestion
 class QuestionGenerator:
     
     def __init__(self):
-        self.word_question = WordQuestion(["Alice", "Bob", "Charlie", "Diana"], 2, 10)
-        self.arithmetic_question = ArithmeticQuestion(2, 16)
+        self.word_question = WordQuestion(["Alice", "Bob", "Charlie", "Diana"], 2, 6)
+        self.arithmetic_question = ArithmeticQuestion(2, 12)
         self.counting_question = CountingQuestion()
-        self.multiplication_question = MultiplicationQuestion(2, 12)
+        self.multiplication_question = MultiplicationQuestion(2, 8)
     
     def main(self):
         question_type = random.choice(["word", "arithmetic", "counting", "multiplication"])
